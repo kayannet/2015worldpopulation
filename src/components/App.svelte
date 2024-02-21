@@ -96,35 +96,35 @@
             </div>
             <div class="map-overlay" bind:this = {legend} id="legend">
                 <!-- Manually created legend key with SVG -->
-                <h3>Legend</h3>
+                <h3>Legend (millions)</h3>
                 <svg width="150" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#ebecd4" />
-                    <text x="25" y="15">0-3500</text>
+                    <text x="25" y="15"> &lt; 10 </text>
                 </svg>
 
                 <svg width="150" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#eef1bc" />
-                    <text x="25" y="15">3500-7000000</text>
+                    <text x="25" y="15">10-70</text>
                 </svg>
 
                 <svg width="200" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#b6d5a6" />
-                    <text x="25" y="15">7000000-90000000</text>
+                    <text x="25" y="15">70-150</text>
                 </svg>
 
                 <svg width="200" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#6fbd6b" />
-                    <text x="25" y="15">90000000-180000000</text>
+                    <text x="25" y="15">150-260</text>
                 </svg>
 
                 <svg width="200" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#93a6a9" />
-                    <text x="25" y="15">180000000-300000000</text>
+                    <text x="25" y="15">260-350</text>
                 </svg>
 
                 <svg width="150" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#ad8fea" />
-                    <text x="25" y="15">300000000+</text>
+                    <text x="25" y="15">350 &gt;</text>
                 </svg>
 
 
