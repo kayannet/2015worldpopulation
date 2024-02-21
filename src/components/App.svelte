@@ -4,6 +4,7 @@
     import { onMount, onDestroy } from 'svelte';
     let map;
     let mapContainer;
+    let legend;
 
     
 
@@ -40,21 +41,21 @@
             '#ad8fea',
             ];
         
-            const legend = document.getElementById('legend');
+            // const legend = document.getElementById('legend');
         
-            layers.forEach((layer, i) => {
-                const color = colors[i];
-                const item = document.createElement('div')
-                const key = document.createElement('span');
-                key.className = 'legend-key';
-                key.style.backgroundColor = color;
+            // layers.forEach((layer, i) => {
+            //     const color = colors[i];
+            //     const item = document.createElement('div')
+            //     const key = document.createElement('span');
+            //     key.className = 'legend-key';
+            //     key.style.backgroundColor = color;
         
-                const value = document.createElement('span');
-                value.innerHTML = `${layer}`;
-                item.appendChild(key);
-                item.appendChild(value);
-                legend.appendChild(item)
-            }); 
+            //     const value = document.createElement('span');
+            //     value.innerHTML = `${layer}`;
+            //     item.appendChild(key);
+            //     item.appendChild(value);
+            //     legend.appendChild(item)
+            // }); 
         
         
             map.on('mousemove', (event) => {
@@ -93,9 +94,36 @@
                     <p>Hover over a country!</p>
                 </div>
             </div>
-            <div class="map-overlay" id="legend"></div>
-        </div>
+            <div class="map-overlay" bind:this = {legend} id="legend">
+                <!-- Manually created legend key with SVG -->
+                <svg width="150" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="#ebecd4" />
+                    <text x="25" y="15">0-3500</text>
+                </svg>
 
+                <svg width="150" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="#eef1bc" />
+                    <text x="25" y="15">3500-7000000</text>
+                </svg>
+
+                <svg width="200" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="#b6d5a6" />
+                    <text x="25" y="15">7000000-90000000</text>
+                </svg>
+
+                <svg width="200" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="#6fbd6b" />
+                    <text x="25" y="15">180000000-300000000</text>
+                </svg>
+
+                <svg width="150" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="#ad8fea" />
+                    <text x="25" y="15">300000000+</text>
+                </svg>
+
+
+            </div>
+        </div>
     </main>
     
     
@@ -143,7 +171,7 @@
         bottom: 0;
         right: 0;
         background: #fff;
-        margin-right: 20px;
+        margin-right: 25px;
         font-family: Helvectia, sans-serif;
         overflow: auto;
         border-radius: 3px;
@@ -158,7 +186,7 @@
     }
     
     #legend {
-        padding: 10px;
+        padding: 15px;
         box-shadow: 0 1px 2px rgba(0 0 0 0.1);
         line-height: 18px;
         height: 110px;
