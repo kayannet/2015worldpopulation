@@ -172,6 +172,12 @@
         margin: 5px;
         font-size: 20px;
     }
+    .map-container {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
     .map-wrap {
         position: absolute;
         width: 100%;
@@ -183,6 +189,9 @@
         left: 0;
         width: 100%;
         height: 100%;
+        margins: 0;
+        padding: 0; /* Ensure no padding */
+
     }
     
     /**
