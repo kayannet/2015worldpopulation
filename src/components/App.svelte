@@ -1,5 +1,8 @@
 <script>
     import mapboxgl from 'mapbox-gl';
+    import 'mapbox-gl/dist/mapbox-gl.css';
+
+
 
     mapboxgl.accessToken = "pk.eyJ1Ijoia3F0cmFuIiwiYSI6ImNsc2t6eXQ4czA3dmcyanJ5eWhoaWQxeHIifQ.2kwe8rDh1r-X61ULATh_Jg";
     
