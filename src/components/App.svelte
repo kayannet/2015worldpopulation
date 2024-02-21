@@ -96,6 +96,7 @@
             </div>
             <div class="map-overlay" bind:this = {legend} id="legend">
                 <!-- Manually created legend key with SVG -->
+                <h3>Legend</h3>
                 <svg width="150" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#ebecd4" />
                     <text x="25" y="15">0-3500</text>
@@ -113,6 +114,11 @@
 
                 <svg width="200" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#6fbd6b" />
+                    <text x="25" y="15">90000000-180000000</text>
+                </svg>
+
+                <svg width="200" height="20">
+                    <rect x="0" y="0" width="20" height="20" fill="#93a6a9" />
                     <text x="25" y="15">180000000-300000000</text>
                 </svg>
 
@@ -125,6 +131,23 @@
             </div>
         </div>
     </main>
+
+    onst layers = [
+            '0-3500',
+            '3500-7000000',
+            '7000000-90000000',
+            '90000000-180000000',
+            '180000000-300000000',
+            '300000000+',
+            ];
+            const colors = [
+            '#ebecd4',
+            '#eef1bc',
+            '#b6d5a6',
+            '#6fbd6b',
+            '#93a6a9',
+            '#ad8fea',
+            ];
     
     
 
@@ -189,7 +212,7 @@
         padding: 15px;
         box-shadow: 0 1px 2px rgba(0 0 0 0.1);
         line-height: 18px;
-        height: 110px;
+        /* height: 250px; */
         margin-bottom: 40px;
         width: 200px;
     }
