@@ -10,7 +10,7 @@
     mapboxgl.accessToken = "pk.eyJ1Ijoia3F0cmFuIiwiYSI6ImNsc2t6eXQ4czA3dmcyanJ5eWhoaWQxeHIifQ.2kwe8rDh1r-X61ULATh_Jg";
     
     onMount(() => {
-        const map = new mapboxgl.Map({
+        map = new mapboxgl.Map({
                 container: mapContainer,
                 style: "mapbox://styles/kqtran/clstfey1b000401pt3anhava7" ,  
                 center: [-79.035728, 35.932522], // Chapel Hill Public Library
@@ -73,19 +73,105 @@
         });
     });
     
+    // onDestroy(() => {
+    //     map.remove();
+    // });
     
     
     
     </script>
 
-    <div class="map-wrap">
+    <!-- <div class="map-wrap">
         <div class="map" bind:this={mapContainer} />
-    </div>
+    </div> -->
+    <main>
+        <div class="map-wrap">
+            <div class="map" bind:this={mapContainer}></div>
+            <div class="map-overlay" id="features">
+                <h2>World Population Map (2015)</h2>
+                <div id="pd">
+                    <p>Hover over a country!</p>
+                </div>
+            </div>
+            <div class="map-overlay" id="legend"></div>
+        </div>
+
+    </main>
+    
+    
 
   <style>
-    .map {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    body {
+        margin: 0;
+        padding: 0;
     }
+    
+    h2,
+    h3 {
+        margin: 10px;
+        font-size: 23px;
+    }
+    
+    h3 {
+        font-size: 16px;
+
+    }
+    
+    p {
+        margin: 5px;
+        font-size: 20px;
+    }
+    .map-wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%; /* Adjust height as needed */
+    }
+    .map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /**
+    * Set rules for how the map overlays
+    * (information box and legend) will be displayed
+    * on the page. */
+    .map-overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: #fff;
+        margin-right: 20px;
+        font-family: Helvectia, sans-serif;
+        overflow: auto;
+        border-radius: 3px;
+        padding: 10px;
+    }
+    
+    #features {
+        top: 0;
+        height: 160px;
+        margin-top: 20px;
+        width: 250px;
+    }
+    
+    #legend {
+        padding: 10px;
+        box-shadow: 0 1px 2px rgba(0 0 0 0.1);
+        line-height: 18px;
+        height: 110px;
+        margin-bottom: 40px;
+        width: 200px;
+    }
+    
+    .legend-key {
+        display: inline-block;
+        border-radius: 20%;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
+   
   </style>
