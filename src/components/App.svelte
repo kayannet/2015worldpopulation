@@ -89,7 +89,9 @@
         <div class="map-wrap">
             <div class="map" bind:this={mapContainer}></div>
             <div class="map-overlay" id="features">
-                <h2>World Population Map (2015)</h2>
+
+
+                <h2>World Population Map (2015) - How does the population of different countries compare?</h2>
                 <div id="pd">
                     <p>Hover over a country!</p>
                 </div>
