@@ -92,6 +92,7 @@
 
 
                 <h2>World Population Map (2015)</h2>
+                <a href="https://docs.google.com/document/d/1FJPpV-D08B5F7_eiT6x4gOq4LDHVqVl9XW7w7Rmz4FU/edit?usp=sharing">Write Up Link</a>
                 <div id="pd">
                     <p>Hover over a country to see its population in 2015!</p>
                 </div>
