@@ -65,7 +65,7 @@
             const population = countries.length ? countries[0].properties.population : undefined;
             document.getElementById('pd').innerHTML = population !== undefined
                 ? `<h3>${countries[0].properties.country}</h3><p><strong>${population}</strong> people</p>`
-                : `<p>Hover over a country!</p>`;
+                : `<p>Hover over a country to see its population in 2015!</p>`;
         });
         
         
@@ -91,14 +91,15 @@
             <div class="map-overlay" id="features">
 
 
-                <h2>World Population Map (2015) - How does the population of different countries compare?</h2>
+                <h2>World Population Map (2015)</h2>
                 <div id="pd">
-                    <p>Hover over a country!</p>
+                    <p>Hover over a country to see its population in 2015!</p>
                 </div>
             </div>
             <div class="map-overlay" bind:this = {legend} id="legend">
                 <!-- Manually created legend key with SVG -->
-                <h3>Legend (millions)</h3>
+                <h3>Legend </h3>
+                <h3>(population in millions) </h3>
                 <svg width="150" height="20">
                     <rect x="0" y="0" width="20" height="20" fill="#ebecd4" />
                     <text x="25" y="15"> &lt; 10 </text>
